@@ -33,33 +33,20 @@ public class RatHandsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //rightBaseOffset = centerEye.transform.InverseTransformPoint(rightClawBase.transform.position);
-        //leftBaseOffset = centerEye.transform.InverseTransformPoint(leftClawBase.transform.position);
-
         rightHairOffset = headAnchor.transform.InverseTransformPoint(rightHairRoot.transform.position);
         leftHairOffset = headAnchor.transform.InverseTransformPoint(leftHairRoot.transform.position);
 
-        //rightHairOffset = rightHairRoot.transform.position - headAnchor.transform.position;
-        //leftHairOffset = leftHairRoot.transform.position - headAnchor.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //leftClawBase.transform.position = centerEye.transform.TransformPoint(leftBaseOffset);
-        //rightClawBase.transform.position = centerEye.transform.TransformPoint(rightBaseOffset);
 
         leftClawBase.transform.position = leftAnchor.transform.position;
         rightClawBase.transform.position = rightAnchor.transform.position;
 
-        //leftClawBase.transform.position = centerEye.transform.position + leftBaseOffset;
-        //rightClawBase.transform.position = centerEye.transform.position + rightBaseOffset;
-
         leftRatBone.transform.position = leftHandAnchor.transform.position;
         rightRatBone.transform.position = rightHandAnchor.transform.position;
-
-        //rightHairRoot.transform.position = headAnchor.transform.position + rightHairOffset;
-        //leftHairRoot.transform.position = headAnchor.transform.position + leftHairOffset;
 
         rightHairRoot.transform.position = headAnchor.transform.TransformPoint(rightHairOffset);
         leftHairRoot.transform.position = headAnchor.transform.TransformPoint(leftHairOffset);
