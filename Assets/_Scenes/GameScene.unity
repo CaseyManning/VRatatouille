@@ -184,6 +184,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sightRange: 3
   collideDist: 1
+--- !u!1 &40919614 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8898064869537690045, guid: cd5128ef0921d405e8651950458a5ee2, type: 3}
+  m_PrefabInstance: {fileID: 8413615022761442814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &259715463 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8898064868148826452, guid: cd5128ef0921d405e8651950458a5ee2, type: 3}
+  m_PrefabInstance: {fileID: 8413615022761442814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &339411744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -672,6 +682,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1112603259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112603261}
+  - component: {fileID: 1112603260}
+  m_Layer: 0
+  m_Name: loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1112603260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112603259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0419e3e5994404780a46b537d858fcd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1112603261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112603259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.494163, y: -9.943768, z: 15.920264}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876341400
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +830,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6930638424680526198, guid: cd5128ef0921d405e8651950458a5ee2, type: 3}
+      propertyPath: leftRatBone
+      value: 
+      objectReference: {fileID: 40919614}
+    - target: {fileID: 6930638424680526198, guid: cd5128ef0921d405e8651950458a5ee2, type: 3}
+      propertyPath: rightRatBone
+      value: 
+      objectReference: {fileID: 259715463}
     - target: {fileID: 8307332839302914761, guid: cd5128ef0921d405e8651950458a5ee2, type: 3}
       propertyPath: m_RootOrder
       value: 3
