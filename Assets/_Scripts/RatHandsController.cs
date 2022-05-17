@@ -21,26 +21,55 @@ public class RatHandsController : MonoBehaviour
     public GameObject leftAnchor;
     public GameObject rightAnchor;
 
-    Vector3 rightBaseOffset;
-    Vector3 leftBaseOffset;
-
-    Vector3 rightHairOffset;
-    Vector3 leftHairOffset;
-
     public GameObject centerEye;
 
+    public static GrabbableHair leftGrab = null;
+    public static GrabbableHair rightGrab = null;
+
+    float grabDist = 0.1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //rightHairOffset = headAnchor.transform.InverseTransformPoint(rightHairRoot.transform.position);
-        //leftHairOffset = headAnchor.transform.InverseTransformPoint(leftHairRoot.transform.position);
+    }
 
+    public GrabbableHair nearestHair(Vector3 pos)
+    {
+        GameObject[] hairs = GameObject.FindGameObjectsWithTag("HairStrand");
+        GrabbableHair closest = null;
+        float cDist = 9999;
+        foreach(GameObject ghair in hairs)
+        {
+            GrabbableHair hair = ghair.GetComponent<GrabbableHair>();
+            float dist = Vector3.Distance(pos, hair.anchorBone.transform.position);
+            if(dist < cDist && dist < grabDist)
+            {
+                cDist = dist;
+                closest = hair;
+            }
+        }
+        return closest;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(OVRInput.Get(OVRInput.RawButton.LHandTrigger))
+        {
+            leftGrab = nearestHair(leftHandAnchor.transform.position);
+        } else
+        {
+            leftGrab = null;
+        }
+        if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
+        {
+            rightGrab = nearestHair(rightHandAnchor.transform.position);
+        }
+        else
+        {
+            rightGrab = null;
+        }
 
         leftClawBase.transform.position = leftAnchor.transform.position;
         rightClawBase.transform.position = rightAnchor.transform.position;
@@ -48,6 +77,16 @@ public class RatHandsController : MonoBehaviour
         leftRatBone.transform.position = leftHandAnchor.transform.position;
         rightRatBone.transform.position = rightHandAnchor.transform.position;
 
+        if(leftGrab)
+        {
+            leftGrab.anchorBone.transform.position = leftHandAnchor.transform.position;
+            leftGrab.anchorBone.transform.rotation = leftHandAnchor.transform.rotation;
+        }
+        if(rightGrab)
+        {
+            rightGrab.anchorBone.transform.position = rightHandAnchor.transform.position;
+            rightGrab.anchorBone.transform.rotation = rightHandAnchor.transform.rotation;
+        }
         //rightHairRoot.transform.position = headAnchor.transform.TransformPoint(rightHairOffset);
         //leftHairRoot.transform.position = headAnchor.transform.TransformPoint(leftHairOffset);
 

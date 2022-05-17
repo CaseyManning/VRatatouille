@@ -24,24 +24,22 @@ public class RatLocomotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
-        Vector3 right = centerAnchor.transform.InverseTransformPoint(rightHandAnchor.transform.position);
-
-        //Vector3 center = centerAnchor.transform.position;
-
-
-
-        float rotationAmt = left.z - right.z;
-
-        if(Mathf.Abs(rotationAmt) > rotDeadZone)
+        if (RatHandsController.leftGrab && RatHandsController.rightGrab)
         {
-            transform.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+            Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
+            Vector3 right = centerAnchor.transform.InverseTransformPoint(rightHandAnchor.transform.position);
+
+            float rotationAmt = left.z - right.z;
+
+            if (Mathf.Abs(rotationAmt) > rotDeadZone)
+            {
+                transform.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+            }
+            float moveAmt = (left.z + right.z) / 2;
+            if (Mathf.Abs(moveAmt) > moveDeadZone)
+            {
+                transform.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
+            }
         }
-        float moveAmt = (left.z + right.z)/2;
-        if(Mathf.Abs(moveAmt) > moveDeadZone)
-        {
-            transform.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
-        }
-        print(moveAmt);
     }
 }
