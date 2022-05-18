@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RatLocomotion : MonoBehaviour
 {
-    public float rotDeadZone = 0f;
+    public float rotDeadZone = 0.15f;
     public float moveDeadZone = 0.05f;
 
     public GameObject leftHandAnchor;
@@ -15,6 +15,8 @@ public class RatLocomotion : MonoBehaviour
     public float rotSpeed = 20f;
     public float moveSpeed = 10f;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class RatLocomotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("Walking", false);
         if (RatHandsController.leftGrab && RatHandsController.rightGrab)
         {
             Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
@@ -33,13 +36,23 @@ public class RatLocomotion : MonoBehaviour
 
             if (Mathf.Abs(rotationAmt) > rotDeadZone)
             {
-                transform.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+                transform.parent.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+                anim.SetBool("Walking", true);
             }
             float moveAmt = (left.z + right.z) / 2;
             if (Mathf.Abs(moveAmt) > moveDeadZone)
             {
-                transform.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
+                transform.parent.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
+                anim.SetBool("Walking", true);
             }
+
+        } else if (RatHandsController.leftGrab)
+        {
+
+        } else if (RatHandsController.rightGrab)
+        {
+
         }
+
     }
 }
