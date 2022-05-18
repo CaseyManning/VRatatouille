@@ -22,16 +22,23 @@ public class RatLocomotion : MonoBehaviour
     Vector3 lastPosLeft;
     Vector3 lastPosRight;
 
+    Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
         lastPosLeft = leftHandAnchor.transform.position;
         lastPosRight = rightHandAnchor.transform.position;
+
+        rb = transform.parent.parent.GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        rb.angularVelocity = Vector3.zero;
+
         anim.SetBool("Walking", false);
         if (RatHandsController.leftGrab && RatHandsController.rightGrab)
         {
@@ -55,14 +62,21 @@ public class RatLocomotion : MonoBehaviour
             float moveAmt = (left.z + right.z) / 2;
             if (Mathf.Abs(moveAmt) > moveDeadZone)
             {
-                transform.parent.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
+                if (rb)
+                {
+                    rb.velocity = transform.forward * moveSpeed * moveAmt;
+                }
+                else
+                {
+                    transform.parent.parent.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime * moveAmt));
+                }
                 anim.SetBool("Walking", true);
             }
 
         } else if (RatHandsController.leftGrab)
         {
             armIK.m_Graph.Play();
-            armIK.effector_L.transform.localPosition += (leftHandAnchor.transform.localPosition - lastPosLeft)* 10;
+            armIK.effector_L.transform.localPosition += (leftHandAnchor.transform.localPosition - lastPosLeft)* 5;
 
             lastPosLeft = leftHandAnchor.transform.localPosition;
 
@@ -71,7 +85,7 @@ public class RatLocomotion : MonoBehaviour
         {
             armIK.m_Graph.Play();
 
-            armIK.effector_R.transform.localPosition += (rightHandAnchor.transform.localPosition - lastPosRight) * 10;
+            armIK.effector_R.transform.localPosition += (rightHandAnchor.transform.localPosition - lastPosRight) * 5;
 
             lastPosRight = rightHandAnchor.transform.localPosition;
 
