@@ -58,16 +58,18 @@ public class RatHandsController : MonoBehaviour
         if(OVRInput.Get(OVRInput.RawButton.LHandTrigger))
         {
             leftGrab = nearestHair(leftHandAnchor.transform.position);
-        } else
+        } else if(leftGrab != null)
         {
+            leftGrab.resetPos();
             leftGrab = null;
         }
         if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
         {
             rightGrab = nearestHair(rightHandAnchor.transform.position);
         }
-        else
+        else if (rightGrab != null)
         {
+            rightGrab.resetPos();
             rightGrab = null;
         }
 
