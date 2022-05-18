@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0419e3e5994404780a46b537d858fcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: lab maze
+  levelToLoad: TestRoom
 --- !u!4 &1112603261
 Transform:
   m_ObjectHideFlags: 0
