@@ -17,6 +17,7 @@ Shader "Custom/VColorOpaque" {
 			struct appdata_t {
 				float4 vertex : POSITION;
 				fixed4 color : COLOR;
+				float3 normal : NORMAL;
 			};
 
 			struct v2f {
@@ -34,7 +35,16 @@ Shader "Custom/VColorOpaque" {
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				return lerp(1, i.color, 1.1)*0.8;
+
+				half2 uvRamp = half2(0.5,0.5);
+
+				half3 newColor = (0,0,0);
+				
+					newColor = i.color;
+				
+
+				half4 finalColor = half4(newColor.x,newColor.y,newColor.z,0);
+				return finalColor;
 			}
 			ENDCG 
 		}
