@@ -17,10 +17,16 @@ public class RatLocomotion : MonoBehaviour
 
     public Animator anim;
 
+    public ArmIK armIK;
+
+    Vector3 lastPosLeft;
+    Vector3 lastPosRight;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        lastPosLeft = leftHandAnchor.transform.position;
+        lastPosRight = rightHandAnchor.transform.position;
     }
 
     // Update is called once per frame
@@ -29,6 +35,13 @@ public class RatLocomotion : MonoBehaviour
         anim.SetBool("Walking", false);
         if (RatHandsController.leftGrab && RatHandsController.rightGrab)
         {
+            if (armIK.m_Graph.IsPlaying())
+            {
+                armIK.m_Graph.Stop();
+                anim.playableGraph.Play();
+                armIK.resetAnchors();
+            }
+
             Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
             Vector3 right = centerAnchor.transform.InverseTransformPoint(rightHandAnchor.transform.position);
 
@@ -48,10 +61,28 @@ public class RatLocomotion : MonoBehaviour
 
         } else if (RatHandsController.leftGrab)
         {
+            armIK.m_Graph.Play();
+            armIK.effector_L.transform.localPosition += (leftHandAnchor.transform.localPosition - lastPosLeft)* 10;
+
+            lastPosLeft = leftHandAnchor.transform.localPosition;
+
 
         } else if (RatHandsController.rightGrab)
         {
+            armIK.m_Graph.Play();
 
+            armIK.effector_R.transform.localPosition += (rightHandAnchor.transform.localPosition - lastPosRight) * 10;
+
+            lastPosRight = rightHandAnchor.transform.localPosition;
+
+        } else
+        {
+            if(armIK.m_Graph.IsPlaying())
+            {
+                armIK.m_Graph.Stop();
+                anim.playableGraph.Play();
+                armIK.resetAnchors();
+            }
         }
 
     }
