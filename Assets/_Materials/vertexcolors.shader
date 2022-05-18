@@ -34,7 +34,7 @@ Shader "Custom/VColorOpaque" {
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
-				return i.color;
+				return lerp(1, i.color, 1.1)*0.8;
 			}
 			ENDCG 
 		}
