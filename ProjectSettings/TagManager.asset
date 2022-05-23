@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - HairStrand
+  - PlayerAnchor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hands
   - Water
   - UI
-  - 
+  - HandCollider
   - 
   - 
   - 
