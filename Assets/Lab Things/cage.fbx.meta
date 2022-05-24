@@ -3,7 +3,22 @@ guid: 1b5804286f2b54a1b8a18f09f36bf887
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BarCageBar_Mat
+    second: {fileID: 2100000, guid: c39655429a22646af83b7e61c281288e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BarCageTopBot_Mat
+    second: {fileID: 2100000, guid: 4ca7ae04c70d441909398897993a7e74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalCage_Mat
+    second: {fileID: 2100000, guid: bc3d9fb45d3f54074a08d064f8ee570f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
