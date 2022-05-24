@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17420848, g: 0.2178339, b: 0.3000467, a: 1}
+  m_IndirectSpecularColor: {r: 0.12734528, g: 0.1341865, b: 0.12117633, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0419e3e5994404780a46b537d858fcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: TestRoom
+  levelToLoad: PuzzleTest
 --- !u!4 &1112603261
 Transform:
   m_ObjectHideFlags: 0
