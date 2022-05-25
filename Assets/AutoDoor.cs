@@ -5,6 +5,7 @@ using UnityEngine;
 public class AutoDoor : MonoBehaviour
 {
     float moveDist = 12f;
+    float rotAmt = 90;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,11 @@ public class AutoDoor : MonoBehaviour
         StartCoroutine(opening());
     }
 
+    public void swingOpen()
+    {
+        StartCoroutine(swinging());
+    }
+
     IEnumerator opening()
     {
         while(moveDist > 0)
@@ -30,6 +36,18 @@ public class AutoDoor : MonoBehaviour
 
             transform.position += Vector3.down * move;
             moveDist -= move;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator swinging()
+    {
+        while (rotAmt > 0)
+        {
+            float rot = Time.deltaTime * 15f;
+
+            transform.Rotate(new Vector3(0, rot, 0));
+            rotAmt -= rot;
             yield return new WaitForEndOfFrame();
         }
     }
