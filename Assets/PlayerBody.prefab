@@ -152,7 +152,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107846949454051413}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 4.17
   m_AngularDrag: 1000
   m_UseGravity: 0
@@ -743,8 +743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHandAnchor: {fileID: 4001906162906575570}
   rightHandAnchor: {fileID: 4001906162906571846}
-  leftRatBone: {fileID: 144435665443013216}
-  rightRatBone: {fileID: 144435664256574089}
+  leftRatBone: {fileID: 5719228589798054638}
+  rightRatBone: {fileID: 5719228589113752071}
   leftClawBase: {fileID: 5939096152989449256}
   rightClawBase: {fileID: 5939096154411818177}
   leftHairRoot: {fileID: 0}
@@ -4030,7 +4030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Name
-      value: ratHand
+      value: rightHand
       objectReference: {fileID: 0}
     - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4042,14 +4042,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &144435664256574089 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134745012586271492, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 990316838891090317}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &735483765346637414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+  m_PrefabInstance: {fileID: 990316838891090317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5719228589113752071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819001077394492298, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
   m_PrefabInstance: {fileID: 990316838891090317}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5939096152989449256 stripped
@@ -4336,7 +4336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Name
-      value: ratHand (1)
+      value: leftHand
       objectReference: {fileID: 0}
     - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4348,14 +4348,14 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &144435665443013216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134745012586271492, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 990316840321880420}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &735483763890615951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+  m_PrefabInstance: {fileID: 990316840321880420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5719228589798054638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819001077394492298, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
   m_PrefabInstance: {fileID: 990316840321880420}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5939096154411818177 stripped

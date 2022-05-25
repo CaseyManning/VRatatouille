@@ -56,7 +56,8 @@ public class RatLocomotion : MonoBehaviour
 
             if (Mathf.Abs(rotationAmt) > rotDeadZone)
             {
-                transform.parent.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+                //transform.parent.parent.Rotate(new Vector3(0, rotationAmt * Time.deltaTime * rotSpeed, 0));
+                rb.angularVelocity = new Vector3(0, rotationAmt * rotSpeed / 50f, 0);
                 anim.SetBool("Walking", true);
             }
             float moveAmt = (left.z + right.z) / 2;

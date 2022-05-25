@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/Intro.unity
+    guid: 63e5a1b2a83ee4535b8cf0b2cf0882f6
+  - enabled: 0
     path: Assets/_Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/lab maze.unity
     guid: d271f9819cab645a18df16e6e21cce28
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/TestRoom.unity
     guid: e692e6e63537d45d2bfd98c0fa60632e
+  - enabled: 1
+    path: Assets/_Scenes/PuzzleTest.unity
+    guid: 6ed46e32459794e2090fd0f3f1d085c7
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 8dbb423ae1afa4454bdbd851b3f90815, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c5f75476d775549ef8e5e5e3118b0a09, type: 2}

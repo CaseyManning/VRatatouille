@@ -28,9 +28,18 @@ public class RatHandsController : MonoBehaviour
 
     float grabDist = 0.1f;
 
+    Vector3 handPosStart;
+
     // Start is called before the first frame update
     void Start()
     {
+        handPosStart = leftRatBone.transform.GetChild(0).transform.localPosition;
+
+        print("————");
+        print(leftRatBone.transform.GetChild(0).transform.localPosition);
+        print(leftRatBone.transform.GetChild(0).transform.localRotation.eulerAngles);
+        print(leftRatBone.transform.GetChild(0).GetChild(0).transform.localPosition);
+        print(leftRatBone.transform.GetChild(0).GetChild(0).transform.localRotation.eulerAngles);
     }
 
     public GrabbableHair nearestHair(Vector3 pos)
@@ -58,19 +67,28 @@ public class RatHandsController : MonoBehaviour
         if(OVRInput.Get(OVRInput.RawButton.LHandTrigger))
         {
             leftGrab = nearestHair(leftHandAnchor.transform.position);
-        } else if(leftGrab != null)
+            setClawGrabbed(leftRatBone);
+        }
+        else if(leftGrab != null)
         {
             leftGrab.resetPos();
             leftGrab = null;
+        } else
+        {
+            setClawUngrabbed(leftRatBone);
         }
         if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
         {
             rightGrab = nearestHair(rightHandAnchor.transform.position);
+            setClawGrabbed(rightRatBone);
         }
         else if (rightGrab != null)
         {
             rightGrab.resetPos();
             rightGrab = null;
+        } else
+        {
+            setClawUngrabbed(rightRatBone);
         }
 
         leftClawBase.transform.position = leftAnchor.transform.position;
@@ -97,5 +115,22 @@ public class RatHandsController : MonoBehaviour
         rightRatBone.transform.rotation = rightHandAnchor.transform.rotation;
         rightRatBone.transform.Rotate(new Vector3(0, 180, 0));
 
+        if(Input.GetKey(KeyCode.Space))
+        {
+            
+        }
+
+    }
+
+    void setClawGrabbed(GameObject cbone)
+    {
+        //cbone.transform.GetChild(0).localPosition = new Vector3(0.1f, 0, 0);
+        cbone.transform.GetChild(0).localRotation = Quaternion.Euler(new Vector3(47.10f, 154.03f, 90.00f));
+        cbone.transform.GetChild(0).GetChild(0).localRotation = Quaternion.Euler(new Vector3(330.51f, 304.41f, 64.52f));
+    }
+    void setClawUngrabbed(GameObject cbone)
+    {
+        cbone.transform.GetChild(0).localRotation = Quaternion.Euler(new Vector3(47.10f, 202.53f, 90.00f));
+        cbone.transform.GetChild(0).GetChild(0).localRotation = Quaternion.Euler(new Vector3(320.01f, 334.13f, 64.52f));
     }
 }
