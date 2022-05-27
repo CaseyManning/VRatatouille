@@ -52,7 +52,7 @@ public class RatLocomotion : MonoBehaviour
             Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
             Vector3 right = centerAnchor.transform.InverseTransformPoint(rightHandAnchor.transform.position);
 
-            float rotationAmt = left.z - right.z;
+            float rotationAmt = (left.x + right.x) / 2;
 
             if (Mathf.Abs(rotationAmt) > rotDeadZone)
             {

@@ -597,6 +597,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0039317245, y: 0.007378378, z: 0.033549428}
   m_Center: {x: 0.0006100898, y: -0.000013767237, z: -0.00022021032}
+--- !u!1 &116273650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819001077394492298, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+  m_PrefabInstance: {fileID: 1147215687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &146605974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,11 +1044,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &455671727 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134745012586271492, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 455671726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455671728 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
@@ -1959,11 +1959,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &1147215688 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1134745012586271492, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 1147215687}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1147215689 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
@@ -1973,6 +1968,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 38cd5bf2e16174171b8eb95f0784877b, type: 3}
   m_PrefabInstance: {fileID: 8326851407759048404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1227196345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4819001077394492298, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+  m_PrefabInstance: {fileID: 455671726}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1265059082 stripped
 Transform:
@@ -2988,8 +2988,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHandAnchor: {fileID: 4195085017764216049}
   rightHandAnchor: {fileID: 4195085017764211301}
-  leftRatBone: {fileID: 1147215688}
-  rightRatBone: {fileID: 455671727}
+  leftRatBone: {fileID: 1227196345}
+  rightRatBone: {fileID: 116273650}
   leftClawBase: {fileID: 455671728}
   rightClawBase: {fileID: 1147215689}
   leftHairRoot: {fileID: 0}

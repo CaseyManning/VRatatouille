@@ -26,9 +26,9 @@ public class IntroNarrativeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         enemy1.leave();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1);
         enemy2.leave();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         intern.enter();
         yield return new WaitForSeconds(12f);
         SceneManager.LoadScene("GameScene");
