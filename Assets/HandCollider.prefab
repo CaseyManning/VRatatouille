@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 946909547854066047}
   - component: {fileID: 5576856558217459723}
   - component: {fileID: 848097841307476254}
+  - component: {fileID: 117715744656696577}
   m_Layer: 3
   m_Name: HandCollider
   m_TagString: Untagged
@@ -97,3 +98,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &117715744656696577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163128229131915266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafa2cc36a4d54bdda472053fd17a10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holding: {fileID: 0}
