@@ -46,7 +46,7 @@ public class AutoDoor : MonoBehaviour
         {
             float rot = Time.deltaTime * 15f;
 
-            transform.Rotate(new Vector3(0, rot, 0));
+            transform.Rotate(new Vector3(0, -rot, 0));
             rotAmt -= rot;
             yield return new WaitForEndOfFrame();
         }

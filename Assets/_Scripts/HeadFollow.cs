@@ -14,7 +14,7 @@ public class HeadFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, headBone.transform.position, 0.2f);
+        transform.position = Vector3.Lerp(transform.position, headBone.transform.position, 0.02f);
         //transform.position = headBone.transform.position;
     }
 }

@@ -10,6 +10,11 @@ public class IntroNarrativeManager : MonoBehaviour
 
     public ScriptedIntern intern;
 
+    public AudioClip enemiesConversation;
+    public AudioClip internCoversation;
+
+    public AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +29,23 @@ public class IntroNarrativeManager : MonoBehaviour
 
     IEnumerator narrative()
     {
+        yield return new WaitForSeconds(0.5f);
+        if (enemiesConversation)
+        {
+            source.PlayOneShot(enemiesConversation);
+        }
         yield return new WaitForSeconds(10);
         enemy1.leave();
-        yield return new WaitForSeconds(1f);
-        enemy2.leave();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1);
+        enemy2.leave(); 
+        yield return new WaitForSeconds(3.5f);
         intern.enter();
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(3f);
+        if (internCoversation)
+        {
+            source.PlayOneShot(internCoversation);
+        }
+        yield return new WaitForSeconds(8f);
         SceneManager.LoadScene("GameScene");
     }
 }

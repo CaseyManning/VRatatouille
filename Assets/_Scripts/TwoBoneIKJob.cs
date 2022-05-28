@@ -44,6 +44,8 @@ public struct TwoBoneIKJob : IAnimationJob
     {
         Solve(stream, topL, midL, lowL, effectorL);
         Solve(stream, topR, midR, lowR, effectorR);
+        lowL.SetRotation(stream, RatHandsController.leftRot/* * Quaternion.Euler(new Vector3(0, 90, 0))*/);
+        lowR.SetRotation(stream, RatHandsController.rightRot/* * Quaternion.Euler(new Vector3(0,-90,0))*/);
     }
 
     /// <summary>

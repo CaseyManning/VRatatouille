@@ -22,6 +22,9 @@ public class RatLocomotion : MonoBehaviour
     Vector3 lastPosLeft;
     Vector3 lastPosRight;
 
+    public GameObject handBone_L;
+    public GameObject handBone_R;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -37,6 +40,9 @@ public class RatLocomotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RatHandsController.leftRot = handBone_L.transform.parent.rotation;
+        RatHandsController.rightRot = handBone_R.transform.parent.rotation;
+
         rb.angularVelocity = Vector3.zero;
 
         anim.SetBool("Walking", false);
@@ -52,7 +58,7 @@ public class RatLocomotion : MonoBehaviour
             Vector3 left = centerAnchor.transform.InverseTransformPoint(leftHandAnchor.transform.position);
             Vector3 right = centerAnchor.transform.InverseTransformPoint(rightHandAnchor.transform.position);
 
-            float rotationAmt = left.z - right.z;
+            float rotationAmt = (left.x + right.x) / 2;
 
             if (Mathf.Abs(rotationAmt) > rotDeadZone)
             {
@@ -80,6 +86,8 @@ public class RatLocomotion : MonoBehaviour
             armIK.effector_L.transform.localPosition += (leftHandAnchor.transform.localPosition - lastPosLeft)* 5;
 
             lastPosLeft = leftHandAnchor.transform.localPosition;
+            print(RatHandsController.leftRot);
+            //armIK.effector_R.transform.rotation = RatHandsController.leftRot;
 
 
         } else if (RatHandsController.rightGrab)
@@ -88,6 +96,7 @@ public class RatLocomotion : MonoBehaviour
 
             armIK.effector_R.transform.localPosition += (rightHandAnchor.transform.localPosition - lastPosRight) * 5;
 
+            //armIK.effector_R.transform.rotation = RatHandsController.rightRot;
             lastPosRight = rightHandAnchor.transform.localPosition;
 
         } else

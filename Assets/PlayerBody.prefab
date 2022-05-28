@@ -154,7 +154,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 100
   m_Drag: 4.17
-  m_AngularDrag: 1000
+  m_AngularDrag: 0
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -4033,6 +4033,10 @@ PrefabInstance:
       value: rightHand
       objectReference: {fileID: 0}
     - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a304f0496f35c47c1aeb824f1b6f3c42, type: 2}
@@ -4337,6 +4341,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Name
       value: leftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3985271169885152068, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
       propertyPath: m_Materials.Array.data[0]

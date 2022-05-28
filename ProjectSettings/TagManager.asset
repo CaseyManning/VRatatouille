@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HairStrand
   - PlayerAnchor
+  - HandGrabbable
   layers:
   - Default
   - TransparentFX

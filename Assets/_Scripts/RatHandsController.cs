@@ -30,16 +30,14 @@ public class RatHandsController : MonoBehaviour
 
     Vector3 handPosStart;
 
+    public static Quaternion leftRot;
+    public static Quaternion rightRot;
+
     // Start is called before the first frame update
     void Start()
     {
         handPosStart = leftRatBone.transform.GetChild(0).transform.localPosition;
 
-        print("————");
-        print(leftRatBone.transform.GetChild(0).transform.localPosition);
-        print(leftRatBone.transform.GetChild(0).transform.localRotation.eulerAngles);
-        print(leftRatBone.transform.GetChild(0).GetChild(0).transform.localPosition);
-        print(leftRatBone.transform.GetChild(0).GetChild(0).transform.localRotation.eulerAngles);
     }
 
     public GrabbableHair nearestHair(Vector3 pos)
@@ -115,10 +113,8 @@ public class RatHandsController : MonoBehaviour
         rightRatBone.transform.rotation = rightHandAnchor.transform.rotation;
         rightRatBone.transform.Rotate(new Vector3(0, 180, 0));
 
-        if(Input.GetKey(KeyCode.Space))
-        {
-            
-        }
+        leftRot = leftHandAnchor.transform.rotation;
+        rightRot = rightHandAnchor.transform.rotation;
 
     }
 
