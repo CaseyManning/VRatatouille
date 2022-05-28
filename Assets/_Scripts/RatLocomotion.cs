@@ -25,6 +25,8 @@ public class RatLocomotion : MonoBehaviour
     public GameObject handBone_L;
     public GameObject handBone_R;
 
+    public static bool moved = false;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -69,6 +71,7 @@ public class RatLocomotion : MonoBehaviour
             float moveAmt = (left.z + right.z) / 2;
             if (Mathf.Abs(moveAmt) > moveDeadZone)
             {
+                moved = true;
                 if (rb)
                 {
                     rb.velocity = transform.forward * moveSpeed * moveAmt;
