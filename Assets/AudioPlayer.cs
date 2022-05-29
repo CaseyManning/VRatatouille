@@ -13,6 +13,8 @@ public class AudioPlayer : MonoBehaviour
         public static AudioClip buttonTutorial;
         public static AudioClip monitorsDialogue1;
         public static AudioClip monitorsDialogue2;
+        public static AudioClip talkingInElevator;
+        public static AudioClip beforeElevator;
     }
 
     public AudioClip ouch;
@@ -20,6 +22,8 @@ public class AudioPlayer : MonoBehaviour
     public AudioClip buttonTutorial;
     public AudioClip monitorsDialogue1;
     public AudioClip monitorsDialogue2;
+    public AudioClip talkingInElevator;
+    public AudioClip beforeElevator;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,8 @@ public class AudioPlayer : MonoBehaviour
         AudioPlayer.Clips.buttonTutorial = buttonTutorial;
         AudioPlayer.Clips.monitorsDialogue1 = monitorsDialogue1;
         AudioPlayer.Clips.monitorsDialogue2 = monitorsDialogue2;
+        AudioPlayer.Clips.talkingInElevator = talkingInElevator;
+        AudioPlayer.Clips.beforeElevator = beforeElevator;
     }
 
     // Update is called once per frame

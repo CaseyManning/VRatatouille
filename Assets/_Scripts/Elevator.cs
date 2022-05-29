@@ -37,7 +37,14 @@ public class Elevator : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-        yield return new WaitForSeconds(2);
+        AudioPlayer.play(AudioPlayer.Clips.talkingInElevator);
+        if (AudioPlayer.Clips.talkingInElevator)
+        {
+            yield return new WaitForSeconds(AudioPlayer.Clips.talkingInElevator.length + 1);
+        } else
+        {
+            yield return new WaitForSeconds(1);
+        }
         SceneManager.LoadScene("Outro");
     }
 }
