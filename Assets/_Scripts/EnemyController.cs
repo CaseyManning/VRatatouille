@@ -49,4 +49,16 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
+    public void move()
+    {
+        anim.SetTrigger("Walk");
+        nav.SetDestination(transform.GetChild(0).transform.position);
+        StartCoroutine(delayedRemove());
+    }
+    IEnumerator delayedRemove()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject);
+    }
 }

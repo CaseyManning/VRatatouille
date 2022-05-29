@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Monitor : MonoBehaviour
 {
+    public static int monitorsSmashed = 0;
+
+    bool shattered = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +22,30 @@ public class Monitor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "HandGrabbable")
+        if(other.tag == "HandGrabbable" && !shattered)
         {
             shatter();
+            shattered = true;
+            monitorsSmashed += 1;
+            if(monitorsSmashed == 2)
+            {
+                AudioPlayer.play(AudioPlayer.Clips.monitorsDialogue2);
+                Destroy(GameObject.FindGameObjectWithTag("Hammer"));
+            }
+            if(RatHandsController.leftGrab)
+            {
+                OVRInput.SetControllerVibration(0.5f, 0.8f, OVRInput.Controller.LTouch);
+            } else
+            {
+                OVRInput.SetControllerVibration(0.5f, 0.8f, OVRInput.Controller.RTouch);
+            }
+            StartCoroutine(stopVibrate());
         }
+    }
+    IEnumerator stopVibrate()
+    {
+        yield return new WaitForSeconds(0.15f);
+        OVRInput.SetControllerVibration(0f, 0f, OVRInput.Controller.All);
     }
 
     void shatter()
