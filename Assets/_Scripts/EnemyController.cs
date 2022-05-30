@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -44,7 +45,6 @@ public class EnemyController : MonoBehaviour
             if (Physics.Raycast(transform.position, (player.transform.position - transform.position) + Vector3.up, out hit, 20f))
             {
                 Debug.DrawLine(transform.position, hit.point);
-                print(hit.collider.tag);
                 if (hit.collider.CompareTag("Player"))
                 {
                     anim.SetTrigger("Walk");
@@ -88,6 +88,7 @@ public class EnemyController : MonoBehaviour
         anim.SetTrigger("Walk");
         nav.SetDestination(transform.GetChild(0).transform.position);
         StartCoroutine(delayedRemove());
+        state = EnemyState.Disabled;
     }
     IEnumerator delayedRemove()
     {
@@ -98,8 +99,20 @@ public class EnemyController : MonoBehaviour
 
     void resetScene()
     {
-        player.transform.position = new Vector3(15.4f, 0, 15.4f);
-        foreach(GameObject enem in GameObject.FindGameObjectsWithTag("Enemy"))
+        
+        RawImage fader = GameObject.FindGameObjectWithTag("Fader").GetComponent<RawImage>();
+        StartCoroutine(fadeInOut(fader));
+    }
+
+    IEnumerator fadeInOut(RawImage fade)
+    {
+        float n = 30f;
+        for (float i = 0; i < n; i++)
+        {
+            fade.color = new Color(0, 0, 0, i / n);
+            yield return new WaitForEndOfFrame();
+        }
+        foreach (GameObject enem in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             EnemyController cont = enem.GetComponent<EnemyController>();
             enem.transform.position = cont.startPos;
@@ -107,5 +120,14 @@ public class EnemyController : MonoBehaviour
             cont.anim.SetTrigger("Idle");
             cont.nav.SetDestination(cont.startPos);
         }
+        yield return new WaitForSeconds(0.2f);
+        for (float i = 0; i < n; i++)
+        {
+            fade.color = new Color(0, 0, 0, (n-i) / n);
+            yield return new WaitForEndOfFrame();
+
+        }
+        player.transform.position = new Vector3(15.4f, 0, 15.4f);
+
     }
 }
