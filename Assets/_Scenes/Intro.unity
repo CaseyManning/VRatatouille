@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18026894, g: 0.22569627, b: 0.3069142, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028472, g: 0.22571671, b: 0.3069235, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -155,8 +155,8 @@ MonoBehaviour:
   enemy1: {fileID: 31088025}
   enemy2: {fileID: 855844263}
   intern: {fileID: 1467316308}
-  enemiesConversation: {fileID: 0}
-  internCoversation: {fileID: 0}
+  enemiesConversation: {fileID: 8300000, guid: 0fad32c452e6c4ab9a3a0c25cc6e6c80, type: 3}
+  internCoversation: {fileID: 8300000, guid: c7f0cd7f2380d449d9b68f23411f869a, type: 3}
   source: {fileID: 1444949495}
 --- !u!4 &352812
 Transform:
