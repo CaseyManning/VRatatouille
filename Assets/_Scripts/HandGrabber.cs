@@ -22,6 +22,7 @@ public class HandGrabber : MonoBehaviour
     {
         if(holding != null)
         {
+            holding.transform.position = transform.position;
             return;
         }
         GameObject[] grabbables = GameObject.FindGameObjectsWithTag("HandGrabbable");

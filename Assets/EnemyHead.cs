@@ -23,6 +23,22 @@ public class EnemyHead : MonoBehaviour
             print(transform.parent.parent.parent.parent.parent.parent.parent.gameObject.name);
             EnemyController enemy = transform.parent.parent.parent.parent.parent.parent.parent.gameObject.GetComponent<EnemyController>();
             enemy.die();
+
+            if (RatHandsController.leftGrab)
+            {
+                OVRInput.SetControllerVibration(0.2f, 0.8f, OVRInput.Controller.LTouch);
+            }
+            else
+            {
+                OVRInput.SetControllerVibration(0.2f, 0.8f, OVRInput.Controller.RTouch);
+            }
+            StartCoroutine(stopVibrate());
+
         }
+    }
+    IEnumerator stopVibrate()
+    {
+        yield return new WaitForSeconds(0.15f);
+        OVRInput.SetControllerVibration(0f, 0f, OVRInput.Controller.All);
     }
 }
