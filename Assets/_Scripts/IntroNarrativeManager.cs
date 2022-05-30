@@ -46,6 +46,6 @@ public class IntroNarrativeManager : MonoBehaviour
             source.PlayOneShot(internCoversation);
             yield return new WaitForSeconds(internCoversation.length + 1);
         }
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PuzzleTest");
     }
 }
