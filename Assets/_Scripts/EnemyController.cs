@@ -92,7 +92,8 @@ public class EnemyController : MonoBehaviour
     IEnumerator delayedRemove()
     {
         yield return new WaitForSeconds(10);
-        Destroy(gameObject);
+        anim.SetTrigger("Idle");
+        state = EnemyState.Idle;
     }
 
     void resetScene()
