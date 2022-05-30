@@ -30,7 +30,7 @@ public class Monitor : MonoBehaviour
             if(monitorsSmashed == 2)
             {
                 AudioPlayer.play(AudioPlayer.Clips.monitorsDialogue2);
-                Destroy(GameObject.FindGameObjectWithTag("Hammer"));
+                //Destroy(GameObject.FindGameObjectWithTag("Hammer"));
             }
             if(RatHandsController.leftGrab)
             {

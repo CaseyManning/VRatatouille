@@ -119,6 +119,7 @@ public class EnemyController : MonoBehaviour
             cont.state = EnemyState.Idle;
             cont.anim.SetTrigger("Idle");
             cont.nav.SetDestination(cont.startPos);
+            cont.nav.enabled = true;
         }
         yield return new WaitForSeconds(0.2f);
         for (float i = 0; i < n; i++)
@@ -129,5 +130,12 @@ public class EnemyController : MonoBehaviour
         }
         player.transform.position = new Vector3(15.4f, 0, 15.4f);
 
+    }
+
+    public void die()
+    {
+        anim.SetTrigger("Death");
+        state = EnemyState.Disabled;
+        nav.enabled = false;
     }
 }
