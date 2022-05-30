@@ -155,8 +155,8 @@ MonoBehaviour:
   enemy1: {fileID: 31088025}
   enemy2: {fileID: 855844263}
   intern: {fileID: 1467316308}
-  enemiesConversation: {fileID: 8300000, guid: 0fad32c452e6c4ab9a3a0c25cc6e6c80, type: 3}
-  internCoversation: {fileID: 8300000, guid: c7f0cd7f2380d449d9b68f23411f869a, type: 3}
+  enemiesConversation: {fileID: 8300000, guid: 94f411387f2a74205aeb0c165790d9ad, type: 3}
+  internCoversation: {fileID: 8300000, guid: cb2b6a086791f45f7b7aaee472ae2af3, type: 3}
   source: {fileID: 1444949495}
 --- !u!4 &352812
 Transform:
