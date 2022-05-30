@@ -15,6 +15,8 @@ public class AudioPlayer : MonoBehaviour
         public static AudioClip monitorsDialogue2;
         public static AudioClip talkingInElevator;
         public static AudioClip beforeElevator;
+        public static AudioClip elevatorDing;
+        public static AudioClip outroEnemyDialogue;
     }
 
     public AudioClip ouch;
@@ -24,6 +26,8 @@ public class AudioPlayer : MonoBehaviour
     public AudioClip monitorsDialogue2;
     public AudioClip talkingInElevator;
     public AudioClip beforeElevator;
+    public AudioClip elevatorDing;
+    public AudioClip outroEnemyDialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,8 @@ public class AudioPlayer : MonoBehaviour
         AudioPlayer.Clips.monitorsDialogue2 = monitorsDialogue2;
         AudioPlayer.Clips.talkingInElevator = talkingInElevator;
         AudioPlayer.Clips.beforeElevator = beforeElevator;
+        AudioPlayer.Clips.elevatorDing = elevatorDing;
+        AudioPlayer.Clips.outroEnemyDialogue = outroEnemyDialogue;
     }
 
     // Update is called once per frame
