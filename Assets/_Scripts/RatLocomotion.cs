@@ -89,7 +89,6 @@ public class RatLocomotion : MonoBehaviour
             armIK.effector_L.transform.localPosition += (leftHandAnchor.transform.localPosition - lastPosLeft)* 5;
 
             lastPosLeft = leftHandAnchor.transform.localPosition;
-            print(RatHandsController.leftRot);
             //armIK.effector_R.transform.rotation = RatHandsController.leftRot;
 
 

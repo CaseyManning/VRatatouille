@@ -20,7 +20,6 @@ public class EnemyHead : MonoBehaviour
     {
         if(other.CompareTag("HandGrabbable"))
         {
-            print(transform.parent.parent.parent.parent.parent.parent.parent.gameObject.name);
             EnemyController enemy = transform.parent.parent.parent.parent.parent.parent.parent.gameObject.GetComponent<EnemyController>();
             enemy.die();
 

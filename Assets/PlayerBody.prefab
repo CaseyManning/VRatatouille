@@ -3585,14 +3585,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ouch: {fileID: 0}
-  moveTutorial: {fileID: 0}
-  buttonTutorial: {fileID: 0}
-  monitorsDialogue1: {fileID: 0}
-  monitorsDialogue2: {fileID: 0}
+  moveTutorial: {fileID: 8300000, guid: f769d780b83534887afd87d6ec38ae94, type: 3}
+  buttonTutorial: {fileID: 8300000, guid: ce8623124041949ed9be313d8f0d6d33, type: 3}
+  monitorsDialogue1: {fileID: 8300000, guid: bc2f80c1fec56498ead0b1f357a7e657, type: 3}
+  monitorsDialogue2: {fileID: 8300000, guid: 94397fc10441947cbb6737e9e7635ec2, type: 3}
   talkingInElevator: {fileID: 0}
-  beforeElevator: {fileID: 0}
+  beforeElevator: {fileID: 8300000, guid: c35d2ae27442149279ada050b79d34dc, type: 3}
   elevatorDing: {fileID: 0}
-  outroEnemyDialogue: {fileID: 0}
+  outroEnemyDialogue: {fileID: 8300000, guid: 3007f9226aea644eda46659878e47b5f, type: 3}
 --- !u!1 &7417767344210784507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4237,29 +4237,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &107846950409063644 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 990316838891090317}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7493172323467700553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107846950409063644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &735483765346637414 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
@@ -4570,29 +4547,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d2ad9b9e7ca264eb391e85e5f2588f1b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
---- !u!1 &107846949825424437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}
-  m_PrefabInstance: {fileID: 990316840321880420}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8669950408011203618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107846949825424437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!4 &735483763890615951 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a09095ad11d2a4b7188cdc055c47b754, type: 3}

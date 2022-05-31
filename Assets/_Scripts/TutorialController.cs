@@ -24,8 +24,10 @@ public class TutorialController : MonoBehaviour
 
     IEnumerator tutorial()
     {
-        while(!RatLocomotion.moved)
+        print("tut");
+        while (!RatLocomotion.moved)
         {
+            print("playing tut");
             AudioPlayer.play(AudioPlayer.Clips.moveTutorial);
             yield return new WaitForSeconds(AudioPlayer.Clips.moveTutorial.length);
         }
