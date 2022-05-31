@@ -18,7 +18,7 @@ public class KeyHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(key.transform.position, transform.position) < 0.8f)
+        if(Vector3.Distance(key.transform.position, transform.position) < 1f)
         {
             unlock.Invoke();
             Destroy(key);
