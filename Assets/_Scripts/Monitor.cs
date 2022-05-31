@@ -27,6 +27,7 @@ public class Monitor : MonoBehaviour
             shatter();
             shattered = true;
             monitorsSmashed += 1;
+            GetComponent<AudioSource>().Play();
             if(monitorsSmashed == 2)
             {
                 AudioPlayer.play(AudioPlayer.Clips.monitorsDialogue2);
