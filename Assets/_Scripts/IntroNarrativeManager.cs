@@ -33,8 +33,8 @@ public class IntroNarrativeManager : MonoBehaviour
         if (enemiesConversation)
         {
             source.PlayOneShot(enemiesConversation);
+            yield return new WaitForSeconds(enemiesConversation.length-5);
         }
-        yield return new WaitForSeconds(10);
         enemy1.leave();
         yield return new WaitForSeconds(1);
         enemy2.leave(); 
@@ -44,8 +44,8 @@ public class IntroNarrativeManager : MonoBehaviour
         if (internCoversation)
         {
             source.PlayOneShot(internCoversation);
+            yield return new WaitForSeconds(internCoversation.length + 1);
         }
-        yield return new WaitForSeconds(8f);
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("PuzzleTest");
     }
 }

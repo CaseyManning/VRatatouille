@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 837988066560858198}
   - component: {fileID: 837988066560858199}
   - component: {fileID: 837988066560858197}
+  - component: {fileID: 7496661906854487346}
   m_Layer: 6
   m_Name: button
   m_TagString: Untagged
@@ -142,6 +143,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7496661906854487346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3768292913414690616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.2830189, g: 0.033374865, b: 0.033374865, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &3966046170567669525
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +172,7 @@ GameObject:
   - component: {fileID: 2301332584445837108}
   - component: {fileID: 5616764956628356023}
   - component: {fileID: 773540962600769210}
+  - component: {fileID: 7182523480917369015}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -225,6 +245,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7182523480917369015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966046170567669525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8310425726349579412
 GameObject:
   m_ObjectHideFlags: 0

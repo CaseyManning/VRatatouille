@@ -113,9 +113,6 @@ public class RatHandsController : MonoBehaviour
         rightRatBone.transform.rotation = rightHandAnchor.transform.rotation;
         rightRatBone.transform.Rotate(new Vector3(0, 180, 0));
 
-        leftRot = leftHandAnchor.transform.rotation;
-        rightRot = rightHandAnchor.transform.rotation;
-
     }
 
     void setClawGrabbed(GameObject cbone)

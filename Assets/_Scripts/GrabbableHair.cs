@@ -15,6 +15,11 @@ public class GrabbableHair : MonoBehaviour
     Vector3 boneOriginal;
     Quaternion boneOriginalRot;
 
+    float lastOuched;
+    float ouchTimer = 5f;
+
+    float ouchDist = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,18 @@ public class GrabbableHair : MonoBehaviour
     void Update()
     {
         transform.position = headAnchor.transform.TransformPoint(pos);
+
+        if(Vector3.Distance(transform.localPosition, boneOriginal) > ouchDist && Time.time - lastOuched > ouchTimer)
+        {
+            ouch();
+        }
+    }
+
+    void ouch()
+    {
+        print("ouch");
+        lastOuched = Time.time;
+        AudioPlayer.play(AudioPlayer.Clips.ouch);
     }
 
     public void resetPos()

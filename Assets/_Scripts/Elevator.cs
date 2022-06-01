@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Elevator : MonoBehaviour
 {
@@ -36,5 +37,14 @@ public class Elevator : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+        AudioPlayer.play(AudioPlayer.Clips.talkingInElevator);
+        if (AudioPlayer.Clips.talkingInElevator)
+        {
+            yield return new WaitForSeconds(AudioPlayer.Clips.talkingInElevator.length + 1);
+        } else
+        {
+            yield return new WaitForSeconds(1);
+        }
+        SceneManager.LoadScene("Outro");
     }
 }
