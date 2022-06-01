@@ -33,6 +33,8 @@ public class EnemyHead : MonoBehaviour
             }
             StartCoroutine(stopVibrate());
 
+            transform.parent.parent.parent.parent.parent.parent.parent.gameObject.GetComponent<AudioSource>().Play();
+
         }
     }
     IEnumerator stopVibrate()

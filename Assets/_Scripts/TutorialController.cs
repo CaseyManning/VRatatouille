@@ -25,6 +25,7 @@ public class TutorialController : MonoBehaviour
     IEnumerator tutorial()
     {
         print("tut");
+        yield return new WaitForEndOfFrame();
         while (!RatLocomotion.moved)
         {
             print("playing tut");
